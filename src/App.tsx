@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment, useEffect } from "react";
+import "./App.css";
+import { AuthContext, AuthProvider } from './contexts/AuthContext'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <AuthProvider>
+        <AuthContext.Consumer>{(token) => {
+          return (
+            <div className="App">
+              {!token ? (
+                <a
+                  href={`${process.env.REACT_APP_AUTH_ENDPOINT}?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&response_type=${process.env.REACT_APP_RESPONSE_TYPE}`}
+                >
+                  Login to Spotify
+                </a>
+              ) : (
+                <p>Log out</p>
+              )}
+            </div>
+          )
+        }}
+        </AuthContext.Consumer>
+      </AuthProvider>
+    </>
   );
 }
 

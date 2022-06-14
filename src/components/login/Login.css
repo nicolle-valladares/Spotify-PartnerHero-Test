@@ -1,0 +1,23 @@
+body {
+  background-color: #0d0d0de1;
+  height: 100%;
+}
+
+.App {
+  text-align: center;
+  color: white;
+}
+
+.login-call-for-action {
+  text-align: left;
+  width: 320px;
+  margin: 100px 200px;
+}
+
+.background-logo {
+  position: relative;
+  bottom: 80px;
+  opacity: 0.2;
+  margin-right: 105px;
+  float: right;
+}

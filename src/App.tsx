@@ -1,7 +1,8 @@
-import React, { Fragment, useEffect } from "react";
 import "./App.css";
-import Navbar from "./components/navbar/Navbar";
+import Layout from "./components/layout/Layout";
 import Login from "./components/login/Login";
+import Home from "./components/home/Home";
+
 import { AuthContext, AuthProvider } from "./contexts/AuthContext";
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
     <>
       <AuthProvider>
         <AuthContext.Consumer>
-          {([token, user]) => {
+          {({token, user}) => {
             return (
               <div className="App">
                 {!token ? (
@@ -18,7 +19,9 @@ function App() {
                     <Login />
                   </>
                 ) : (
-                  <Navbar user={user} />
+                  <Layout>
+                    <Home />
+                  </Layout>
                   // TODO: Logout method 
                 )}
               </div>

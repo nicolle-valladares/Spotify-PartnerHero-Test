@@ -3,6 +3,7 @@ import axios from "axios";
 
 import {
   Box,
+  Button,
   Card,
   ImageListItemBar,
   ImageListItem,
@@ -27,9 +28,7 @@ const Releases = () => {
         },
       }
     );
-    const releases: Items[] = response.data.albums.items.filter(
-      (item?: Items) => item?.album_type == "single"
-    );
+    const releases: Items[] = response.data.albums.items
 
     setNewReleases(releases);
   }, [token]);
@@ -58,24 +57,20 @@ const Releases = () => {
         }}
       >
         {newReleases.map((release) => (
-          <Card
-            key={release?.name}
-            sx={{minWidth: '250px'}}
-          >
-            <ImageListItem sx={{ width: 250, height: 150 }}>
-              <img
-                src={`${release?.images?.[0]?.url}?w=248&fit=crop&auto=format`}
-                srcSet={`${release?.images?.[0]?.url}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                alt={release?.name}
-                loading="lazy"
-              />
-              <ImageListItemBar
-                title={release?.name}
-                subtitle="+ Save to Library"
-                position="below"
-              />
-            </ImageListItem>
-          </Card>
+          <>
+            <Card key={release?.name} sx={{ minWidth: "250px", backgroundColor: "#1db954" }}>
+              <ImageListItem sx={{ width: 250, height: 150 }}>
+                <img
+                  src={`${release?.images?.[0]?.url}?w=248&fit=crop&auto=format`}
+                  srcSet={`${release?.images?.[0]?.url}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                  alt={release?.name}
+                  loading="lazy"
+                />
+                <ImageListItemBar title={release?.name} />
+              </ImageListItem>
+              <Button sx={{color:"white"}}>+ Save to Library</Button>
+            </Card>
+          </>
         ))}
       </Box>
     </>

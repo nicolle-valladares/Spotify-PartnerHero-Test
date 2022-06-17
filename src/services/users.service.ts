@@ -1,5 +1,7 @@
 import firestore from "./firebase";
 import { User } from "../types/user";
+import { Library } from "../types/library";
+import librariesService from "./libraries.service";
 
 const db = firestore.collection("/Users");
 
@@ -12,7 +14,15 @@ class UsersService {
     let data;
 
     if (getUser.empty) {
-      data = db.add(user);
+      const newUser = db.add(user);
+      const dataUser = (await (await newUser).get()).data();
+
+      const library = {
+        name: "My Library",
+        user_id: dataUser?.id,
+        items: [],
+      };
+      data = librariesService.create(library);
     } else {
       data = getUser.docs;
     }

@@ -14,8 +14,12 @@ class LibrariesService {
       ...library.docs[0].data()
     };
   }
-  create(library: Library) {
-    return db.add(library);
+  async create(library: Library): Promise<Library> {
+    const lib = await (await db.add(library)).get();
+    return {
+      id: lib.id,
+      ...lib.data()
+    };
   }
   update(id: string, value: any) {
     return db.doc(id).update(value);

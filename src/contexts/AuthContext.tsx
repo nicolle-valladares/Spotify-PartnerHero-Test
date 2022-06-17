@@ -1,10 +1,11 @@
 import axios from "axios";
-import { createContext, useCallback, useEffect, useState } from "react";
+import { createContext, ReactNode, useCallback, useEffect, useState } from "react";
+import UsersService from "../services/users.service";
 import { User } from "../types/user";
 
 const AuthContext = createContext<{ token?: string; user?: User }>({});
 
-function AuthProvider(props: any) {
+function AuthProvider(props: { children: ReactNode }) {
   const [user, setUser] = useState<User>({});
 
   const token = window.location.hash
@@ -14,13 +15,15 @@ function AuthProvider(props: any) {
     ?.split("=")[1] as string;
 
   const getUserData = useCallback(async () => {
-    let userData = await axios.get(`${process.env.REACT_APP_API_URL}/me`, {
+    const userData = await axios.get(`${process.env.REACT_APP_API_URL}/me`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
     });
     setUser(userData.data);
+
+    UsersService.getOrCreate(userData.data.id , userData.data)
   }, []);
 
   useEffect(() => {

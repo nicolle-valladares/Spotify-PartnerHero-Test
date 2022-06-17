@@ -1,12 +1,14 @@
 import axios from "axios";
 import { createContext, ReactNode, useCallback, useEffect, useState } from "react";
 import UsersService from "../services/users.service";
+import { Library } from "../types/library";
 import { User } from "../types/user";
 
-const AuthContext = createContext<{ token?: string; user?: User }>({});
+const AuthContext = createContext<{ token?: string; user?: User; library?: Library }>({});
 
 function AuthProvider(props: { children: ReactNode }) {
   const [user, setUser] = useState<User>({});
+  const [library, setLibrary] = useState<Library>({})
 
   const token = window.location.hash
     ?.substring(1)
@@ -23,7 +25,9 @@ function AuthProvider(props: { children: ReactNode }) {
     });
     setUser(userData.data);
 
-    UsersService.getOrCreate(userData.data.id , userData.data)
+    const { display_name, id } = userData.data
+    const libraryData = await UsersService.getOrCreate(userData.data.id, { display_name, id })
+    setLibrary(libraryData)
   }, []);
 
   useEffect(() => {
@@ -31,7 +35,7 @@ function AuthProvider(props: { children: ReactNode }) {
   }, [getUserData]);
 
   return (
-    <AuthContext.Provider value={{ token, user }}>
+    <AuthContext.Provider value={{ token, user, library }}>
       {props.children}
     </AuthContext.Provider>
   );

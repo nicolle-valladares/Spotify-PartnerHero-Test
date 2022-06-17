@@ -11,7 +11,7 @@ function App() {
     <>
       <AuthProvider>
           <AuthContext.Consumer>
-            {({ token, user }) => {
+            {({ token, user, library }) => {
               return (
                 <div className="App">
                   {!token ? (

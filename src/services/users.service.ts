@@ -14,7 +14,7 @@ class UsersService {
     let data;
 
     if (getUser.empty) {
-      const newUser = db.add(user);
+      const newUser = this.create(user)
       const dataUser = (await (await newUser).get()).data();
 
       const library = {
@@ -24,8 +24,9 @@ class UsersService {
       };
       data = librariesService.create(library);
     } else {
-      data = getUser.docs;
+      data = librariesService.getByUser(getUser.docs[0].data().id);
     }
+
     return data;
   }
   create(user: User) {

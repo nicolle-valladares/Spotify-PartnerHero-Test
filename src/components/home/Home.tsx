@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import SearchList from "../layout/search/SearchList";
 import Releases from "../releases/Releases";
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
       }}
     >
       <Releases />
+      <SearchList />
     </Box>
   );
 };

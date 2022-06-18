@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useContext } from "react";
+import { useState, useCallback, useEffect, useContext, Fragment } from "react";
 import axios from "axios";
 
 import {
@@ -65,9 +65,8 @@ const Releases = () => {
         }}
       >
         {newReleases.map((release) => (
-          <>
+          <Fragment key={release?.name}>
             <Card
-              key={release?.name}
               sx={{ minWidth: "250px", backgroundColor: "#1db954" }}
             >
               <ImageListItem sx={{ width: 250, height: 150 }}>
@@ -86,7 +85,7 @@ const Releases = () => {
                 + Save to Library
               </Button>
             </Card>
-          </>
+          </Fragment>
         ))}
       </Box>
     </>

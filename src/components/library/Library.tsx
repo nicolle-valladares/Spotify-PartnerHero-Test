@@ -12,7 +12,7 @@ const Library = () => {
   const { library } = useContext(LibraryContext)
 
   const getAlbums = useCallback(async () => {
-    if (library?.items) {
+    if (library?.items?.length) {
       const response = await axios.get(
         `${process.env.REACT_APP_API_URL}/albums/?ids=${library?.items.join(
           ","

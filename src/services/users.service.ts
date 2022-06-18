@@ -1,6 +1,5 @@
 import firestore from "./firebase";
 import { User } from "../types/user";
-import { Library } from "../types/library";
 import librariesService from "./libraries.service";
 
 const db = firestore.collection("/Users");

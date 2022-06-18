@@ -33,17 +33,17 @@ const Releases = () => {
 
     setNewReleases(releases);
   }, [token]);
-  
+
   const saveToLibrary = (id: string) => {
-      if(!library?.items?.includes(id)) {
-          library?.items?.push(id);
-          if (library?.id) librariesService.update(library?.id, library);
-        }
-    };
-    
-    useEffect(() => {
-      getNewReleases();
-    }, [getNewReleases]);
+    if (!library?.items?.includes(id)) {
+      library?.items?.push(id);
+      if (library?.id) librariesService.update(library?.id, library);
+    }
+  };
+
+  useEffect(() => {
+    getNewReleases();
+  }, [getNewReleases]);
 
   return (
     <>
@@ -66,9 +66,7 @@ const Releases = () => {
       >
         {newReleases.map((release) => (
           <Fragment key={release?.name}>
-            <Card
-              sx={{ minWidth: "250px", backgroundColor: "#1db954" }}
-            >
+            <Card sx={{ minWidth: "250px", backgroundColor: "#1db954" }}>
               <ImageListItem sx={{ width: 250, height: 150 }}>
                 <img
                   src={`${release?.images?.[0]?.url}?w=248&fit=crop&auto=format`}

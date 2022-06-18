@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./Navbar.css";
-import axios from "axios";
+
 // MATERIAL COMPONENTS
-import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
+import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {

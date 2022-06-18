@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import Library from "../library/Library";
 
 import Releases from "../releases/Releases";
 
@@ -13,6 +14,7 @@ const Home = () => {
       }}
     >
       <Releases />
+      <Library />
     </Box>
   );
 };

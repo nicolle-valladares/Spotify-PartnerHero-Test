@@ -2,20 +2,20 @@ import { useState } from "react";
 import "./Navbar.css";
 import axios from "axios";
 // MATERIAL COMPONENTS
-import {
-  AppBar,
-  Box,
-  IconButton,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
   const drawerWidth = 240;
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
+  };
+
+  const redirectHome = () => {
+    navigate("/home");
   };
 
   return (
@@ -28,7 +28,7 @@ const Navbar = () => {
         color: "#ffffff",
       }}
     >
-      <Toolbar>
+      <Toolbar onClick={redirectHome}>
         <IconButton
           color="inherit"
           aria-label="open drawer"
@@ -38,7 +38,7 @@ const Navbar = () => {
         >
           {/* <MenuIcon /> */}
         </IconButton>
-        <Typography variant="h6" noWrap component="div">
+        <Typography sx={{cursor: "pointer"}} variant="h6" noWrap component="div">
           PartnerHero ReactJS Assessment
         </Typography>
       </Toolbar>

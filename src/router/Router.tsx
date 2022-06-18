@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../components/home/Home";
+import Library from "../components/library/Library";
 import Login from "../components/login/Login";
 import { AuthProvider } from "../contexts/AuthContext";
 import { LibraryProvider } from "../contexts/LibraryContext";
@@ -18,6 +19,14 @@ const Router = () => {
               element={
                 <RequireAuth>
                   <Home />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/library"
+              element={
+                <RequireAuth>
+                  <Library />
                 </RequireAuth>
               }
             />

@@ -33,17 +33,17 @@ const Releases = () => {
 
     setNewReleases(releases);
   }, [token]);
-
-  useEffect(() => {
-    getNewReleases();
-  }, [getNewReleases]);
-
+  
   const saveToLibrary = (id: string) => {
-    if(!library?.items?.includes(id)) {
-        library?.items?.push(id);
-        if (library?.id) librariesService.update(library?.id, library);
-    }
-  };
+      if(!library?.items?.includes(id)) {
+          library?.items?.push(id);
+          if (library?.id) librariesService.update(library?.id, library);
+        }
+    };
+    
+    useEffect(() => {
+      getNewReleases();
+    }, [getNewReleases]);
 
   return (
     <>

@@ -6,7 +6,6 @@ import {
   Box,
   Drawer as MaterialDrawer,
   Divider,
-  InputBase,
   List,
   ListItemAvatar,
   ListItemText,
@@ -14,36 +13,24 @@ import {
   Toolbar,
   ListItemIcon,
 } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import QueueMusicIcon from '@mui/icons-material/QueueMusic';
+
+import QueueMusicIcon from "@mui/icons-material/QueueMusic";
 
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
-const Search = styled("div")(() => ({
-  position: "relative",
-  marginLeft: 0,
-  width: "100%",
-}));
-
-const StyledInputBase = styled(InputBase)(() => ({
-  color: "inherit",
-  "& .MuiInputBase-input": {
-    width: "100%",
-  },
-}));
+import Search from "../search/Search";
 
 const Drawer = () => {
   const [search, setSearch] = useState("");
   const { token, user } = useContext(AuthContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleChange = (e: { target: { value: string } }) => {
     setSearch(e.target.value);
   };
 
   const searchAlbums = useCallback(async () => {
-    const response = await axios.get(
+    await axios.get(
       `${process.env.REACT_APP_API_URL}/search?type=track&name=${search}`,
       {
         headers: {
@@ -55,8 +42,8 @@ const Drawer = () => {
   }, [search]);
 
   const goToMyLibrary = () => {
-    navigate('/library')
-  }
+    navigate("/library");
+  };
 
   useEffect(() => {
     searchAlbums();
@@ -94,20 +81,18 @@ const Drawer = () => {
         <Divider />
         <List>
           <ListItem>
-            <Search>
-              <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ "aria-label": "search" }}
-                onChange={handleChange}
-              />
-            </Search>
+            <Search />
           </ListItem>
           <Divider />
           <ListItem>
             <ListItemIcon>
-              <QueueMusicIcon sx={{color: "#1db954"}} />
+              <QueueMusicIcon sx={{ color: "#1db954" }} />
             </ListItemIcon>
-            <ListItemText sx={{cursor: "pointer"}} onClick={goToMyLibrary} primary="My Library" />
+            <ListItemText
+              sx={{ cursor: "pointer" }}
+              onClick={goToMyLibrary}
+              primary="My Library"
+            />
           </ListItem>
         </List>
       </MaterialDrawer>

@@ -42,7 +42,7 @@ const Library = () => {
   const removeFromLibrary = (id: string) => {
     if (library?.items?.length) {
       let newLibrary = library;
-      newLibrary.items = library?.items.filter((lib) => lib != id);
+      newLibrary.items = library?.items.filter((lib) => lib !== id);
 
       if (library?.id) librariesService.update(library?.id, newLibrary);
     }

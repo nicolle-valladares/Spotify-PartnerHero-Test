@@ -4,10 +4,12 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { IconButton, ListItemText, ListItem, List } from "@mui/material";
 import axios from "axios";
 import { Items } from "../../types/releaseItem";
+import { LibraryContext } from "../../contexts/LibraryContext";
 
 const Library = () => {
   const [albums, setAlbums] = useState<Items[]>([]);
-  const { token, library } = useContext(AuthContext);
+  const { token } = useContext(AuthContext);
+  const { library } = useContext(LibraryContext)
 
   const getAlbums = useCallback(async () => {
     if (library?.items) {

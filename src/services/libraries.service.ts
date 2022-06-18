@@ -27,5 +27,10 @@ class LibrariesService {
   delete(id: string) {
     return db.doc(id).delete();
   }
+  getById() {
+    return db.onSnapshot(library => {
+      console.log(library)
+    })
+  }
 }
 export default new LibrariesService();

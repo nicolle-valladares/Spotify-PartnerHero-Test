@@ -4,12 +4,13 @@ import Login from "./components/login/Login";
 import Home from "./components/home/Home";
 
 import { AuthContext, AuthProvider } from "./contexts/AuthContext";
-
+import { LibraryProvider } from "./contexts/LibraryContext";
 
 function App() {
   return (
     <>
       <AuthProvider>
+        <LibraryProvider>
           <AuthContext.Consumer>
             {({ token, user, library }) => {
               return (
@@ -29,6 +30,7 @@ function App() {
               );
             }}
           </AuthContext.Consumer>
+        </LibraryProvider>
       </AuthProvider>
     </>
   );

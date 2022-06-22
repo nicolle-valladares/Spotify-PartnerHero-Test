@@ -5,17 +5,19 @@ import { AuthContext } from "../../contexts/AuthContext";
 import "./Login.css";
 
 function Login() {
-  const { user } = useContext(AuthContext)
-  const navigate = useNavigate()
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
   const spotifyLogin = () => {
-    window.location.replace(`${process.env.REACT_APP_AUTH_ENDPOINT}?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&response_type=${process.env.REACT_APP_RESPONSE_TYPE}`)
-  }
+    window.location.replace(
+      `${process.env.REACT_APP_AUTH_ENDPOINT}?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&response_type=${process.env.REACT_APP_RESPONSE_TYPE}`
+    );
+  };
 
   useEffect(() => {
     if (user?.id) {
-      navigate('/home')
+      navigate("/home");
     }
-  }, [user])
+  }, [user]);
 
   return (
     <>

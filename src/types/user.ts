@@ -6,7 +6,7 @@ export interface User {
 }
 
 export interface Image {
-  url?: string; 
+  url?: string;
   height?: number;
   width?: number;
 }

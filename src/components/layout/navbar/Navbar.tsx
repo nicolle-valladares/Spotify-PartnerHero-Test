@@ -38,7 +38,12 @@ const Navbar = () => {
         >
           {/* <MenuIcon /> */}
         </IconButton>
-        <Typography sx={{cursor: "pointer"}} variant="h6" noWrap component="div">
+        <Typography
+          sx={{ cursor: "pointer" }}
+          variant="h6"
+          noWrap
+          component="div"
+        >
           PartnerHero ReactJS Assessment
         </Typography>
       </Toolbar>

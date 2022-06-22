@@ -1,0 +1,177 @@
+{
+  "albums": {
+    "href": "https://api.spotify.com/v1/browse/new-releases?locale=en%2Ces%3Bq%3D0.9&offset=0&limit=20",
+    "items": [
+      {
+        "album_type": "album",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4"
+            },
+            "href": "https://api.spotify.com/v1/artists/3TVXtAsR1Inumwj472S9r4",
+            "id": "3TVXtAsR1Inumwj472S9r4",
+            "name": "Drake",
+            "type": "artist"
+          }
+        ],
+        "href": "https://api.spotify.com/v1/albums/3cf4iSSKd8ffTncbtKljXw",
+        "id": "3cf4iSSKd8ffTncbtKljXw",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b2738dc0d801766a5aa6a33cbe37",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e028dc0d801766a5aa6a33cbe37",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d000048518dc0d801766a5aa6a33cbe37",
+            "width": 64
+          }
+        ],
+        "name": "Honestly, Nevermind",
+        "release_date": "2022-06-17",
+        "release_date_precision": "day",
+        "total_tracks": 14,
+        "type": "album",
+        "uri": "spotify:album:3cf4iSSKd8ffTncbtKljXw"
+      },
+      {
+        "album_type": "single",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/6nB0iY1cjSY1KyhYyuIIKH"
+            },
+            "href": "https://api.spotify.com/v1/artists/6nB0iY1cjSY1KyhYyuIIKH",
+            "id": "6nB0iY1cjSY1KyhYyuIIKH",
+            "name": "FKA twigs",
+            "type": "artist"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/4BYCmmwbSU2bxcQEEI6RBU"
+        },
+        "href": "https://api.spotify.com/v1/albums/4BYCmmwbSU2bxcQEEI6RBU",
+        "id": "4BYCmmwbSU2bxcQEEI6RBU",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b27314aee4f383a0e9f4ec5d90c8",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e0214aee4f383a0e9f4ec5d90c8",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d0000485114aee4f383a0e9f4ec5d90c8",
+            "width": 64
+          }
+        ],
+        "name": "killer",
+        "release_date": "2022-06-16",
+        "release_date_precision": "day",
+        "total_tracks": 1,
+        "type": "album",
+        "uri": "spotify:album:4BYCmmwbSU2bxcQEEI6RBU"
+      },
+      {
+        "album_type": "album",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1gPhS1zisyXr5dHTYZyiMe"
+            },
+            "href": "https://api.spotify.com/v1/artists/1gPhS1zisyXr5dHTYZyiMe",
+            "id": "1gPhS1zisyXr5dHTYZyiMe",
+            "name": "Kevin Gates",
+            "type": "artist"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/5ob4kF4KkXFDqC5ysCdCV8"
+        },
+        "href": "https://api.spotify.com/v1/albums/5ob4kF4KkXFDqC5ysCdCV8",
+        "id": "5ob4kF4KkXFDqC5ysCdCV8",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b27325686be1a7d3e337f097cdf8",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e0225686be1a7d3e337f097cdf8",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d0000485125686be1a7d3e337f097cdf8",
+            "width": 64
+          }
+        ],
+        "name": "Khaza",
+        "release_date": "2022-06-17",
+        "release_date_precision": "day",
+        "total_tracks": 19,
+        "type": "album",
+        "uri": "spotify:album:5ob4kF4KkXFDqC5ysCdCV8"
+      },
+      {
+        "album_type": "single",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/57vWImR43h4CaDao012Ofp"
+            },
+            "href": "https://api.spotify.com/v1/artists/57vWImR43h4CaDao012Ofp",
+            "id": "57vWImR43h4CaDao012Ofp",
+            "name": "Steve Lacy",
+            "type": "artist"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/3pc9LMhg8lyfpPTyywABMd"
+        },
+        "href": "https://api.spotify.com/v1/albums/3pc9LMhg8lyfpPTyywABMd",
+        "id": "3pc9LMhg8lyfpPTyywABMd",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b273a77e5ec294344b20317b2d6e",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e02a77e5ec294344b20317b2d6e",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d00004851a77e5ec294344b20317b2d6e",
+            "width": 64
+          }
+        ],
+        "name": "Mercury",
+        "release_date": "2022-06-16",
+        "release_date_precision": "day",
+        "total_tracks": 1,
+        "type": "album",
+        "uri": "spotify:album:3pc9LMhg8lyfpPTyywABMd"
+      }
+    ],
+    "limit": 20,
+    "next": "https://api.spotify.com/v1/browse/new-releases?locale=en%2Ces%3Bq%3D0.9&offset=20&limit=20",
+    "offset": 0,
+    "previous": null,
+    "total": 100
+  }
+}

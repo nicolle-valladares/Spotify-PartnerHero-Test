@@ -13,7 +13,7 @@ class UsersService {
     let data;
 
     if (getUser.empty) {
-      const newUser = this.create(user)
+      const newUser = this.create(user);
       const dataUser = (await (await newUser).get()).data();
 
       const library = {

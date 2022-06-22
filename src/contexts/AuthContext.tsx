@@ -29,12 +29,12 @@ function AuthProvider(props: { children: ReactNode }) {
     ?.split("=")[1] as string;
 
   if (urlToken) {
-    sessionStorage.setItem('token', urlToken)
+    sessionStorage.setItem("token", urlToken);
   }
 
   const sessionToken = sessionStorage.getItem("token");
 
-  const token = urlToken ? urlToken : sessionToken ?? ''
+  const token = urlToken ? urlToken : sessionToken ?? "";
 
   const getUserData = useCallback(async () => {
     if (token) {

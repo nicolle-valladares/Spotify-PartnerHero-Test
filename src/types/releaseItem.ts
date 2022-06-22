@@ -2,8 +2,8 @@ export interface Items {
   album_type?: string;
   artists: Artists[];
   id?: string;
-  images?: Images[]
-  name?: string
+  images?: Images[];
+  name?: string;
 }
 
 export interface Artists {

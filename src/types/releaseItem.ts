@@ -1,3 +1,9 @@
+export interface Albums {
+  name?: string;
+  album?: Items;
+  id?: string;
+}
+
 export interface Items {
   album_type?: string;
   artists: Artists[];

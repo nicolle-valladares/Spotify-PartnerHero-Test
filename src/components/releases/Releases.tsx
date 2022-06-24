@@ -35,8 +35,8 @@ const Releases = () => {
   }, [token]);
 
   const saveToLibrary = (id: string) => {
-    if (!library?.items?.includes(id)) {
-      library?.items?.push(id);
+    if (!library?.items?.map((item) => item.id).includes(id)) {
+      library?.items?.push({ id, type: "album" });
       if (library?.id) librariesService.update(library?.id, library);
     }
   };

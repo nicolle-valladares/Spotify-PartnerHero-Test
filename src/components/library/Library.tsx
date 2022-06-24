@@ -11,7 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import axios from "axios";
-import { Items } from "../../types/releaseItem";
+import { Albums, Items } from "../../types/releaseItem";
 import { LibraryContext } from "../../contexts/LibraryContext";
 import librariesService from "../../services/libraries.service";
 
@@ -23,9 +23,9 @@ const Library = () => {
   const getAlbums = useCallback(async () => {
     if (library?.items?.length) {
       const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/albums/?ids=${library?.items.join(
-          ","
-        )}`,
+        `${process.env.REACT_APP_API_URL}/albums/?ids=${library?.items
+          .map((item) => item.id)
+          .join(",")}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -33,16 +33,14 @@ const Library = () => {
           },
         }
       );
-      const libraryAlbums: Items[] = response.data.albums;
-
-      setAlbums(libraryAlbums);
+      setAlbums(response.data.albums);
     }
   }, [library]);
 
   const removeFromLibrary = (id: string) => {
     if (library?.items?.length) {
       let newLibrary = library;
-      newLibrary.items = library?.items.filter((lib) => lib !== id);
+      newLibrary.items = library?.items.filter((lib) => lib.id !== id);
 
       if (library?.id) librariesService.update(library?.id, newLibrary);
     }

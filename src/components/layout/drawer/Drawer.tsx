@@ -93,6 +93,7 @@ const Drawer = () => {
               onClick={goToMyLibrary}
               primary="My Library"
             />
+            {/* TODO: Logout list item */}
           </ListItem>
         </List>
       </MaterialDrawer>
